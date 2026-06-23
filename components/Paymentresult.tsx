@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useCallback, useEffect, useMemo } from "react";
+import { useState, useCallback, useEffect, useMemo, Suspense } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
@@ -312,7 +312,7 @@ function FailedModal({
 
 // ─── Popup Controller ─────────────────────────────────────────────────────────
 
-export function PaymentPopup() {
+export function PaymentPopupInner() {
   const [open, setOpen] = useState(false);
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -378,4 +378,11 @@ export function PaymentPopup() {
   if (success) return null;
 
   return <FailedModal data={data} onClose={handleClose} />;
+}
+export function PaymentPopup() {
+  return (
+    <Suspense fallback={null}>
+      <PaymentPopupInner />
+    </Suspense>
+  );
 }

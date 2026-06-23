@@ -9,9 +9,7 @@ const IsLoading = () => {
         animate={{ opacity: [0.1, 0.5, 0.1], scale: [0.95, 1, 0.95] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         className="text-[12vw] font-black uppercase  text-cream italic"
-      >
-        Droppz
-      </motion.h2>
+      ></motion.h2>
     </div>
   );
 };
