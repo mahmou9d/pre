@@ -1,12 +1,5 @@
 import { ArrowRight } from "lucide-react";
-
-/**
- * Design tokens — streetwear / bold (matches Nav)
- * Color: #0A0A0A (ink), #FAFAF7 (paper), #D4FF3D (acid lime), #FF4D00 (signal orange)
- * Type: display = heavy condensed sans, all-caps, tight tracking, big scale
- * Signature: headline cuts across a diagonal-clipped lime block; "SS26" stamp
- * rotated like the Nav logo tag; CTA has the same tactile press as Nav buttons.
- */
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -45,44 +38,46 @@ const Hero = () => {
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <button
-                type="button"
-                className="group flex items-center gap-2 bg-[#D4FF3D] border-3 border-[#0A0A0A] px-7 py-3.5 text-[13px] font-black uppercase tracking-wide text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#D4FF3D] active:translate-x-[3px] active:translate-y-[3px] transition-all"
-                style={{ borderWidth: 3 }}
-              >
-                Shop the drop
-                <ArrowRight
-                  size={16}
-                  strokeWidth={3}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </button>
-              <button
+              <Link href={"/shop"}>
+                <button
+                  type="button"
+                  className="group flex items-center gap-2 bg-[#D4FF3D] border-3 border-[#0A0A0A] px-7 py-3.5 text-[13px] font-black uppercase tracking-wide text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#D4FF3D] active:translate-x-[3px] active:translate-y-[3px] transition-all"
+                  style={{ borderWidth: 3 }}
+                >
+                  Shop the drop
+                  <ArrowRight
+                    size={16}
+                    strokeWidth={3}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </button>
+              </Link>
+              {/* <button
                 type="button"
                 className="px-7 py-3.5 text-[13px] font-black uppercase tracking-wide text-[#0A0A0A] border-3 border-[#0A0A0A]/0 hover:border-[#0A0A0A] transition-colors"
                 style={{ borderWidth: 3 }}
               >
                 Watch lookbook
-              </button>
+              </button> */}
             </div>
           </div>
 
-          {/* Right: diagonal-clipped visual block + rotated stamp */}
-          <div className="lg:col-span-5 relative">
+          {/* Right: diagonal-clipped image block + rotated stamp */}
+          <div className="lg:col-span-5 relative hidden lg:block">
             <div
-              className="relative w-full aspect-[4/5] bg-[#0A0A0A] border-3 border-[#0A0A0A]"
+              className="relative w-full aspect-[5/5] border-3 border-[#0A0A0A] overflow-hidden"
               style={{
                 borderWidth: 3,
                 clipPath: "polygon(8% 0, 100% 0, 100% 92%, 0 100%)",
               }}
             >
-              <div
-                className="absolute inset-0 opacity-90"
-                style={{
-                  background:
-                    "repeating-linear-gradient(135deg, #D4FF3D 0px, #D4FF3D 2px, #0A0A0A 2px, #0A0A0A 40px)",
-                }}
+              {/* ↓ استبدل الـ src بصورتك */}
+              <img
+                src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=900&q=80"
+                alt="Drop 004"
+                className="absolute inset-0 w-full h-full object-cover object-top"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-transparent" />
               <div className="absolute inset-0 flex items-end p-6">
                 <span className="text-[#FAFAF7] text-[12px] font-black uppercase tracking-widest">
                   Issue No. 04 — Riot Co.
@@ -90,22 +85,22 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Rotated stamp badge, echoes Nav logo tag */}
+            {/* Rotated stamp badge */}
             <div
               className="absolute -top-5 -left-5 lg:-left-8 bg-[#FF4D00] border-3 border-[#0A0A0A] w-20 h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center rotate-12 shadow-[4px_4px_0_0_#0A0A0A]"
               style={{ borderWidth: 3 }}
             >
-              <span className="text-[#0A0A0A] text-[11px] lg:text-[12px] font-black uppercase text-center leading-tight -rotate-12">
-                SS
+              <span className="text-[#0A0A0A] text-[14px] lg:text-[18px] font-black uppercase text-center leading-tight -rotate-12">
+                NEW
                 <br />
-                26
+                DROP
               </span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom ticker, same language as Nav marquee */}
+      {/* Bottom ticker */}
       <div className="hidden md:flex items-center h-9 bg-[#0A0A0A] overflow-hidden whitespace-nowrap border-t-4 border-[#0A0A0A]">
         <div className="animate-[marquee_22s_linear_infinite] flex gap-10 px-4">
           {Array.from({ length: 8 }).map((_, i) => (
