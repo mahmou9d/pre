@@ -1,13 +1,5 @@
-import AdminLayout from "@/components/Adminlayout";
-import Bannerspage from "@/components/Bannerspage";
-import { ProtectedRoute } from "@/lib/ProtectedRoute";
+import Bannerspage from "@/components/admin/Bannerspage";
 
 export default function Page() {
-  return (
-    <ProtectedRoute>
-      <AdminLayout>
-        <Bannerspage />
-      </AdminLayout>
-    </ProtectedRoute>
-  );
+  return <Bannerspage />;
 }

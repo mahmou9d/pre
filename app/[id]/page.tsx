@@ -24,7 +24,7 @@ import { toast } from "@/hooks/use-toast";
 import { useGetProducts, useGetSingleProduct } from "@/hooks/useProducts";
 import { useGetReviews, useAddReview } from "@/hooks/useReviews";
 import { useAddToCart } from "@/hooks/useCart";
-import { useCats } from "@/lib/CatsContext";
+import { useCats } from "@/context/CatsContext";
 
 /* ── Helpers ── */
 const fmt = (n: number) => `EGP ${n.toLocaleString("en-US")}`;

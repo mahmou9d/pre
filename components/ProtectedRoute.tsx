@@ -1,4 +1,4 @@
-// lib/ProtectedRoute.tsx
+// components/ProtectedRoute.tsx
 "use client";
 
 import IsLoading from "@/components/IsLoading";

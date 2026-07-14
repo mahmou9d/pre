@@ -2,7 +2,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { GalleryImage, Variant } from "@/type/type";
-import { useProductPage } from "@/hooks/Useproductpage";
+import { useProductPage } from "@/hooks/useProductPage";
 import { toast } from "@/hooks/use-toast";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import AdminCategoryDropdown, { ConfirmDelete, ImgGallery, Spinner, VRow } from "./ComponetsProductsPage";

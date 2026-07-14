@@ -11,9 +11,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { RefreshDeviceID } from "@/lib/DeviceIDProvider";
+import { RefreshDeviceID } from "../components/DeviceIDProvider";
 import { useAuth } from "@/hooks/useAuth";
-import { useCats } from "@/lib/CatsContext";
+import { useCats } from "@/context/CatsContext";
 import { useGetCartItems } from "@/hooks/useCart";
 
 /**
